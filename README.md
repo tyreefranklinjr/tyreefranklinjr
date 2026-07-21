@@ -2,11 +2,14 @@
 <h3 align="center">Python Back-End Engineer</h3>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/tyree-franklin-jr">
+  <a href="https://www.linkedin.com/in/tyree-franklinjr">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="mailto:tyree.franklinjr@gmail.com">
+  <a href="mailto:tyree.franklinjr@icloud.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/tyreefranklinjr">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
 
@@ -20,7 +23,7 @@
 
 ### Background
 
-Computer Science student at UT Arlington (3.8 GPA) focused on Python back-end development, data pipelines, and systems automation. Built AI-driven automation tools at Wayfair that pulled live competitor data for leadership decision-making. Currently at Nextlink Internet diagnosing network and infrastructure issues, ranked #1 company-wide in ticketing performance. Completed a cybersecurity internship at UNT simulating attack scenarios and hardening systems.
+Computer Science student at Western Governors University focused on Python back-end systems, distributed architecture, and infrastructure automation. Built AI-driven automation pipelines at Wayfair that aggregated competitor data across 13 sources for leadership decision-making. Currently a Tier I Network Engineer at Nextlink Internet, diagnosing faults across a distributed fixed-wireless network. Completed a cybersecurity internship at UNT (GenCyber) simulating attack scenarios and hardening systems.
 
 Based in Fort Worth, Texas.
 
@@ -30,29 +33,33 @@ Based in Fort Worth, Texas.
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white" />
-  <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" />
-  <img src="https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white" />
 </p>
 
 ---
 
 ### Selected Projects
 
-**Sign Language Detector** — Real-time gesture recognition pipeline in Python using MediaPipe and OpenCV; processes live video input and classifies 21 hand landmarks per frame with low-latency inference.
+**Distributed Order Management System** — Event-driven microservices platform (Order, Inventory, Notification, Auth) with database-per-service PostgreSQL, Kafka-based async messaging with idempotent event handling, circuit breakers and retries via tenacity, Redis-based distributed locking, and JWT auth validated across services. Tested with Pact contract tests and pytest via Docker Compose.
 
-**Electrochromic Tint Controller** — End-to-end Python system on Raspberry Pi that ingests sensor data, runs a glare-detection algorithm, and triggers hardware output automatically. Designed and integrated the full stack solo.
+**Receipt/Document Processing Pipeline** — Event-driven OCR pipeline: FastAPI REST API → S3 upload → EventBridge → Lambda running AWS Textract's AnalyzeExpense API → PostgreSQL. Entire stack (S3, Lambda, EventBridge, IAM, RDS, ECS/Fargate) provisioned as Infrastructure-as-Code in Terraform, with pytest/moto tests running in GitHub Actions CI.
 
-**Level 2 Rocket** — Python/C++ flight control logic for a nationally ranked (top 100) rocketry competition; met strict real-time altitude and timing tolerances under hardware constraints.
+**Speed Test Diagnostics Platform** — Full-stack network diagnostics engine (Flask/SQLite) validated across 300+ closed-environment test runs, using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias.
+
+**Level 2 Rocket** — C++ flight-control and altimeter logic for a Level 2 rocket that met 2025 American Rocketry Challenge standards; team placed top 100 nationally.
 
 ---
 
 ### Current Focus
 
-- B.S. Computer Science, UT Arlington — 3.8 GPA
-- Tier I Technical Support, Nextlink Internet
-- Microsoft Specialist certified: Excel, Word, PowerPoint, Python Fundamentals
+- B.S. Computer Science, Western Governors University (expected May 2028)
+- Tier I Network Engineer, Nextlink Internet
+- Certified: Microsoft Specialist, Python Programming Fundamentals, Automation and Scripting with Python, Introduction to Software Engineering
