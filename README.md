@@ -2,10 +2,10 @@
 <h3 align="center">Python Back-End Engineer</h3>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/tyree-franklinjr">
+  <a href="https://www.linkedin.com/in/tyree-franklin-jr/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="mailto:tyree.franklinjr@icloud.com">
+  <a href="mailto:tyree.franklinjr@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
   <a href="https://github.com/tyreefranklinjr">
