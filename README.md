@@ -50,19 +50,23 @@ Based in Fort Worth, Texas.
 
 **Distributed Order Management System**
 <br>
-Four independently deployable microservices (Order, Inventory, Notification, Auth), each with its own PostgreSQL database. Kafka messaging with idempotent consumers, Redis-backed distributed locks on stock reservations, circuit breakers and retries via tenacity, JWTs validated locally against JWKS. Contract-tested with Pact and pytest, orchestrated with Docker Compose.
+- Four independently deployable microservices (Order, Inventory, Notification, Auth), each with its own PostgreSQL database. 
+- Kafka messaging with idempotent consumers, Redis-backed distributed locks on stock reservations, circuit breakers and retries via tenacity, JWTs validated locally against JWKS.
+- Contract-tested with Pact and pytest, orchestrated with Docker Compose.
 
 **Receipt and Document Processing Pipeline**
 <br>
-Event-driven OCR pipeline: FastAPI upload to S3, EventBridge triggers a Lambda running AWS Textract's AnalyzeExpense API, results land in PostgreSQL. Full stack (S3, Lambda, EventBridge, IAM, RDS, ECS/Fargate) provisioned in Terraform, tested with pytest and moto in GitHub Actions CI.
+- Event-driven OCR pipeline: FastAPI upload to S3, EventBridge triggers a Lambda running AWS Textract's AnalyzeExpense API, results land in PostgreSQL.
+- Full stack (S3, Lambda, EventBridge, IAM, RDS, ECS/Fargate) provisioned in Terraform, tested with pytest and moto in GitHub Actions CI.
 
 **Speed Test Diagnostics Platform**
 <br>
-Full-stack network diagnostics engine (Flask, SQLite) using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias, validated across 300+ closed-environment test runs.
+- Full-stack network diagnostics engine (Flask, SQLite) using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias, validated across 300+ closed-environment test runs.
 
 **Level 2 Rocket, Flight Control**
 <br>
-C++ flight-control and altimeter logic for a Level 2 rocket built to 2025 American Rocketry Challenge standards. Team placed top 100 nationally.
+- C++ flight-control and altimeter logic for a Level 2 rocket built to 2025 American Rocketry Challenge standards.
+- Team placed top 100 nationally.
 
 ---
 
