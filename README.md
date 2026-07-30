@@ -23,7 +23,9 @@
 
 ### Background
 
-Computer Science student at Western Governors University focused on Python back-end systems, distributed architecture, and infrastructure automation. Built AI-driven automation pipelines at Wayfair that aggregated competitor data across 13 sources for leadership decision-making. Currently a Tier I Network Engineer at Nextlink Internet, diagnosing faults across a distributed fixed-wireless network. Completed a cybersecurity internship at UNT (GenCyber) simulating attack scenarios and hardening systems.
+I build back-end systems in Python, with a focus on distributed architecture and the infrastructure that keeps it running. At Wayfair I built automation pipelines that pulled competitor pricing data from 13 sources and turned it into something leadership could actually act on. Right now I work as a Tier I Network Engineer at Nextlink Internet, where I spend my days tracing faults through a distributed fixed-wireless network, which has taught me more about systems failing in the real world than any course could. I also completed a cybersecurity internship at UNT through GenCyber, running attack simulations and hardening systems against them.
+
+I'm currently finishing a B.S. in Computer Science at Western Governors University, but the engineering work isn't waiting for the degree to catch up.
 
 Based in Fort Worth, Texas.
 
@@ -48,13 +50,21 @@ Based in Fort Worth, Texas.
 
 ### Selected Projects
 
-**Distributed Order Management System** — Event-driven microservices platform (Order, Inventory, Notification, Auth) with database-per-service PostgreSQL, Kafka-based async messaging with idempotent event handling, circuit breakers and retries via tenacity, Redis-based distributed locking, and JWT auth validated across services. Tested with Pact contract tests and pytest via Docker Compose.
+**Distributed Order Management System**
+<br>
+Four independently deployable microservices (Order, Inventory, Notification, Auth), each owning its own PostgreSQL database with no shared schema. Services communicate over Kafka with idempotent consumers, so replayed or duplicate events never trigger duplicate side effects. Stock reservations are protected with Redis-backed distributed locks to prevent overselling under concurrent load, synchronous calls are wrapped in circuit breakers and retries via tenacity, and JWTs are validated locally against a JWKS endpoint rather than hitting Auth on every request. Contract-tested with Pact and pytest, all four services orchestrated through Docker Compose.
 
-**Receipt/Document Processing Pipeline** — Event-driven OCR pipeline: FastAPI REST API → S3 upload → EventBridge → Lambda running AWS Textract's AnalyzeExpense API → PostgreSQL. Entire stack (S3, Lambda, EventBridge, IAM, RDS, ECS/Fargate) provisioned as Infrastructure-as-Code in Terraform, with pytest/moto tests running in GitHub Actions CI.
+**Receipt and Document Processing Pipeline**
+<br>
+Event-driven OCR pipeline: a FastAPI endpoint accepts an upload to S3, EventBridge triggers a Lambda that runs the document through AWS Textract's AnalyzeExpense API, and the extracted data lands in PostgreSQL. The entire stack, S3, Lambda, EventBridge, IAM, RDS, and ECS/Fargate, is provisioned as infrastructure-as-code in Terraform, with pytest and moto tests running in GitHub Actions on every push.
 
-**Speed Test Diagnostics Platform** — Full-stack network diagnostics engine (Flask/SQLite) validated across 300+ closed-environment test runs, using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias.
+**Speed Test Diagnostics Platform**
+<br>
+A full-stack network diagnostics engine (Flask, SQLite) I built to solve a real problem at work: raw throughput numbers were getting skewed by TCP ramp-up. I validated a trimmed-mean sampling approach across 300+ closed-environment test runs to correct for it before trusting the numbers.
 
-**Level 2 Rocket** — C++ flight-control and altimeter logic for a Level 2 rocket that met 2025 American Rocketry Challenge standards; team placed top 100 nationally.
+**Level 2 Rocket, Flight Control**
+<br>
+Wrote the C++ flight-control and altimeter logic for a Level 2 high-power rocket built to 2025 American Rocketry Challenge standards. The team placed in the top 100 nationally.
 
 ---
 
