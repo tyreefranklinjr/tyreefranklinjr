@@ -23,9 +23,7 @@
 
 ### Background
 
-I build back-end systems in Python, with a focus on distributed architecture and the infrastructure that keeps it running. At Wayfair I built automation pipelines that pulled competitor pricing data from 13 sources and turned it into something leadership could actually act on. Right now I work as a Tier I Network Engineer at Nextlink Internet, where I spend my days tracing faults through a distributed fixed-wireless network, which has taught me more about systems failing in the real world than any course could. I also completed a cybersecurity internship at UNT through GenCyber, running attack simulations and hardening systems against them.
-
-I'm currently finishing a B.S. in Computer Science at Western Governors University, but the engineering work isn't waiting for the degree to catch up.
+Python back-end engineer focused on distributed systems. Built automation pipelines at Wayfair that pulled competitor pricing from 13 sources for leadership. Tier I Network Engineer at Nextlink Internet, tracing faults across a distributed fixed-wireless network. Completed a cybersecurity internship at UNT (GenCyber) running attack simulations and hardening systems.
 
 Based in Fort Worth, Texas.
 
@@ -52,19 +50,19 @@ Based in Fort Worth, Texas.
 
 **Distributed Order Management System**
 <br>
-Four independently deployable microservices (Order, Inventory, Notification, Auth), each owning its own PostgreSQL database with no shared schema. Services communicate over Kafka with idempotent consumers, so replayed or duplicate events never trigger duplicate side effects. Stock reservations are protected with Redis-backed distributed locks to prevent overselling under concurrent load, synchronous calls are wrapped in circuit breakers and retries via tenacity, and JWTs are validated locally against a JWKS endpoint rather than hitting Auth on every request. Contract-tested with Pact and pytest, all four services orchestrated through Docker Compose.
+Four independently deployable microservices (Order, Inventory, Notification, Auth), each with its own PostgreSQL database. Kafka messaging with idempotent consumers, Redis-backed distributed locks on stock reservations, circuit breakers and retries via tenacity, JWTs validated locally against JWKS. Contract-tested with Pact and pytest, orchestrated with Docker Compose.
 
 **Receipt and Document Processing Pipeline**
 <br>
-Event-driven OCR pipeline: a FastAPI endpoint accepts an upload to S3, EventBridge triggers a Lambda that runs the document through AWS Textract's AnalyzeExpense API, and the extracted data lands in PostgreSQL. The entire stack, S3, Lambda, EventBridge, IAM, RDS, and ECS/Fargate, is provisioned as infrastructure-as-code in Terraform, with pytest and moto tests running in GitHub Actions on every push.
+Event-driven OCR pipeline: FastAPI upload to S3, EventBridge triggers a Lambda running AWS Textract's AnalyzeExpense API, results land in PostgreSQL. Full stack (S3, Lambda, EventBridge, IAM, RDS, ECS/Fargate) provisioned in Terraform, tested with pytest and moto in GitHub Actions CI.
 
 **Speed Test Diagnostics Platform**
 <br>
-A full-stack network diagnostics engine (Flask, SQLite) I built to solve a real problem at work: raw throughput numbers were getting skewed by TCP ramp-up. I validated a trimmed-mean sampling approach across 300+ closed-environment test runs to correct for it before trusting the numbers.
+Full-stack network diagnostics engine (Flask, SQLite) using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias, validated across 300+ closed-environment test runs.
 
 **Level 2 Rocket, Flight Control**
 <br>
-Wrote the C++ flight-control and altimeter logic for a Level 2 high-power rocket built to 2025 American Rocketry Challenge standards. The team placed in the top 100 nationally.
+C++ flight-control and altimeter logic for a Level 2 rocket built to 2025 American Rocketry Challenge standards. Team placed top 100 nationally.
 
 ---
 
