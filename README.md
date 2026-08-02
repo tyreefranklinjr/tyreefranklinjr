@@ -63,11 +63,6 @@ Based in Fort Worth, Texas.
 <br>
 - Full-stack network diagnostics engine (Flask, SQLite) using a trimmed-mean sampling algorithm to correct for TCP ramp-up bias, validated across 300+ closed-environment test runs.
 
-**Level 2 Rocket, Flight Control**
-<br>
-- C++ flight-control and altimeter logic for a Level 2 rocket built to 2025 American Rocketry Challenge standards.
-- Team placed top 100 nationally.
-
 ---
 
 ### Current Focus
