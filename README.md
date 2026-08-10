@@ -1,5 +1,5 @@
 <h1 align="center">Tyree Franklin Jr.</h1>
-<h3 align="center">Python Back-End Engineer</h3>
+<h3 align="center">Python Back-End Engineer</h3> 
 
 <p align="center">
   <a href="https://www.linkedin.com/in/tyree-franklin-jr/">
