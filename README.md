@@ -34,7 +34,11 @@
 | **< 250 ms** communications failover                     | **500+** automated SIL/HIL fault scenarios     |
 
 <p align="center">
-  <img src="./rocket.gif" width="760" alt="Rocket project test footage" />
+  <img
+    src="./rocket.gif"
+    width="400"
+    alt="Rocket flight test"
+  />
 </p>
 
 ---
