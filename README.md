@@ -29,9 +29,9 @@
 |                                                          |                                                |
 | -------------------------------------------------------- | ---------------------------------------------- |
 | **1.024 MS/s** IQ throughput                             | **< 4 ms p99** DSP latency                     |
-| **< 1% BER @ 8 dB Eb/N0** across 1M+ bits                | **99.99%** block delivery over 60 min          |
-| **0 steady-state heap allocations** in DSP critical path | **4096-point FFT** deterministic RF validation |
-| **< 250 ms** communications failover                     | **500+** automated SIL/HIL fault scenarios     |
+| **99.99%** block delivery over 60 min                    | **0 steady-state heap allocations** in DSP critical path |
+| **4096-point FFT** deterministic RF validation           | **< 250 ms** communications failover           |
+| **100%** safe-state transition success                   | **500+** automated SIL/HIL fault scenarios     |
 
 <p align="center">
   <img
@@ -51,24 +51,24 @@
 ```text
 IQ samples
    ↓
-DC correction → DDC → FIR / decimation → preamble correlation
+Bounded queue (backpressure)
    ↓
-carrier + timing synchronization
+FFT / DSP core
    ↓
-soft decisions → Viterbi decode → CRC validation
+Metrics: p99 latency, block delivery
 ```
 
-**DSP / Communications**
-`BPSK` · `QPSK` · `FFT` · `FIR` · `CRC-32` · `Convolutional FEC` · `Soft-Decision Viterbi` · `BER/PER Analysis`
+**DSP / RF Processing**
+`FFT` · `IQ Processing` · `RTL-SDR` · `Deterministic RF Validation`
 
 **Real-Time Systems**
-`Bounded SPSC Queues` · `Backpressure` · `Zero-Allocation Critical Paths` · `IQ Record/Replay` · `Deterministic Testing`
+`Bounded SPSC Queues` · `Backpressure` · `Zero-Allocation Critical Paths` · `IQ Record/Replay` · `Rust/Tokio Supervision` · `Injected Failure Scenarios`
 
 **Embedded / Autonomy**
-`FreeRTOS` · `CAN/TWAI` · `EKF Sensor Fusion` · `PID Control` · `A* Planning` · `Watchdogs`
+`FreeRTOS` · `CAN/TWAI` · `I2C` · `UART` · `EKF Sensor Fusion` · `PID Control` · `A* Planning` · `Watchdogs` · `Mission-State Management`
 
 **Resilient Communications**
-`ACK/Retry` · `Sequence Tracking` · `Duplicate Suppression` · `Link Scoring` · `Hysteresis Failover`
+`Sequence Tracking` · `ACK/Retry` · `Duplicate Suppression` · `Link Scoring` · `Priority Queues` · `Automatic Failover`
 
 ---
 
@@ -77,28 +77,20 @@ soft decisions → Viterbi decode → CRC validation
 <p align="center">
   <a href="https://github.com/tyreefranklinjr/TeleComms--Software-Defined-Comms">
     <img
-      src="https://raw.githubusercontent.com/tyreefranklinjr/TeleComms--Software-Defined-Comms/main/figures/ber_vs_ebn0_awgn.png"
-      width="49%"
-      alt="Empirical BER versus theoretical BER over AWGN"
-    />
-  </a>
-  <a href="https://github.com/tyreefranklinjr/TeleComms--Software-Defined-Comms">
-    <img
-      src="https://raw.githubusercontent.com/tyreefranklinjr/TeleComms--Software-Defined-Comms/main/figures/frame_error_rate.png"
-      width="49%"
-      alt="Frame error rate under channel noise"
+      src="https://raw.githubusercontent.com/tyreefranklinjr/TeleComms--Software-Defined-Comms/main/assets/dashboard.png"
+      width="80%"
+      alt="Real pipeline performance dashboard: latency, delivery, and FFT spectrum from an actual run"
     />
   </a>
 </p>
 <p align="center">
   <sub>
-    Monte Carlo link validation: empirical BER vs. closed-form
-    Q(√(2·Eb/N0)) theory, and frame-level degradation under channel noise.
+    Measured p99 latency, block delivery, and FFT spectrum from an actual run of the SDR pipeline.
   </sub>
 </p>
 <p align="center">
   <a href="https://github.com/tyreefranklinjr/TeleComms--Software-Defined-Comms">
-    <b>View RF simulation + statistical analysis →</b>
+    <b>View the SDR processing platform →</b>
   </a>
 </p>
 
@@ -106,21 +98,20 @@ soft decisions → Viterbi decode → CRC validation
 
 ## Selected Engineering Work
 
-### Real-Time Software-Defined Communications + RF Processing
-`C++20` `C` `Rust` `Python` `Linux` `RTL-SDR` `FFTW` `CMake/Ninja` `Nix`
+### Real-Time Software-Defined Communications and RF Processing Platform
+<sub>Jun 2026</sub>
+`C++20` `C` `Rust` `Python` `Linux` `RTL-SDR` `DSP` `FFTW` `CMake/Ninja` `Nix` `Docker`
 
-* Sustained **1.024 MS/s IQ processing** with **<4 ms p99 DSP latency**, bounded queues, explicit backpressure, and zero steady-state allocation in the critical path.
-* Implemented **BPSK/QPSK**, CRC-32 framing, **rate-1/2 K=7 convolutional FEC**, soft-decision Viterbi decoding, synchronization, and BER/PER validation.
-* Achieved **<1% BER at 8 dB Eb/N0 across 1M+ simulated bits**.
-* Built **4096-point FFT**, deterministic IQ record/replay, fault injection, and endurance validation with **99.99% block delivery over 60 minutes**.
+* Engineered a real-time SDR processing stack sustaining **1.024 MS/s IQ throughput** with **<4 ms p99 DSP latency**, implementing bounded SPSC queues, explicit backpressure, and zero steady-state heap allocation in the critical processing path.
+* Built deterministic RF validation infrastructure with IQ record/replay, **4096-point FFT analysis**, Rust/Tokio supervision, and injected failure scenarios, maintaining **99.99% block delivery** during 60-minute endurance runs.
 
-### Resilient Autonomous Mission Computer
-`C++20` `C` `Rust` `FreeRTOS` `ESP32-C3` `CAN/TWAI` `EKF` `PID` `A*`
+### Resilient Autonomous Mission Computer and Degraded-Communications Platform
+<sub>Jul 2026</sub>
+`C++20` `C` `Rust` `FreeRTOS` `ESP32-C3` `CAN/TWAI` `I2C` `UART` `EKF` `PID` `A*` `Docker` `Linux`
 
-* Architected a distributed **4-node** embedded system with real-time tasks up to **50 Hz**, CAN/TWAI, IMU/GNSS fusion, watchdogs, and bounded-memory execution.
-* Maintained autonomous mission execution through **30 seconds of complete communications loss** with **<250 ms failover**.
-* Implemented **EKF state estimation, PID control, A* planning**, degraded-mode recovery, stale-data rejection, and link-health scoring.
-* Achieved **100% safe-state transition success across 500+ automated SIL/HIL fault scenarios**.
+* Architected a distributed **4-node** embedded autonomy system with FreeRTOS scheduling up to **50 Hz**, CAN/TWAI communication, IMU/GNSS sensor fusion, watchdogs, mission-state management, and bounded-memory execution across real-time control paths.
+* Developed fault-tolerant communications with sequence tracking, ACK/retry logic, duplicate suppression, link scoring, priority queues, and automatic failover, maintaining autonomous operation through **30 s communication outages** with **<250 ms failover latency**.
+* Implemented EKF-based state estimation, PID control, A* motion planning, and deterministic SIL/HIL fault injection across sensor, CAN, network, and system failures, achieving **100% safe-state transition success** across **500+ automated scenarios**.
 
 ### Live RF / Fixed-Wireless Operations
 * Diagnose physical wireless links using **constellation diagrams, SNR, packet loss, MTR, and radio telemetry**.
@@ -130,7 +121,7 @@ soft decisions → Viterbi decode → CRC validation
 ---
 
 ## Core Stack
-`C++20` · `Rust` · `C` · `Python` · `Linux` · `SDR` · `DSP` · `FreeRTOS` · `Sockets` · `TCP/UDP` · `CAN/TWAI` · `CMake` · `Nix` · `Docker` · `pytest` · `GoogleTest`
+`C++20` · `Rust` · `C` · `Python` · `Linux` · `RTL-SDR` · `DSP` · `FFTW` · `FreeRTOS` · `ESP32-C3` · `CAN/TWAI` · `I2C` · `UART` · `CMake` · `Nix` · `Docker` · `pytest` · `GoogleTest`
 
 ---
 
