@@ -85,7 +85,7 @@ Metrics: p99 latency, block delivery
 </p>
 <p align="center">
   <sub>
-    Measured p99 latency, block delivery, and FFT spectrum from an actual run of the SDR pipeline.
+    Measured p99 DSP latency, block delivery, and FFT spectrum from an actual run of the SDR pipeline.
   </sub>
 </p>
 <p align="center">
