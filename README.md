@@ -37,8 +37,11 @@
   <img
     src="./rocket.gif"
     width="400"
-    alt="Rocket flight test"
+    alt="Novus Rocketry Team, Top 100 nationally, 2025"
   />
+</p>
+<p align="center">
+  <sub>Novus Rocketry Team, Top 100 nationally. Served as Club Officer, 2025.</sub>
 </p>
 
 ---
@@ -87,14 +90,12 @@ soft decisions → Viterbi decode → CRC validation
     />
   </a>
 </p>
-
 <p align="center">
   <sub>
-    Monte Carlo link validation — empirical BER vs. closed-form
-    Q(√(2·Eb/N0)) theory and frame-level degradation under channel noise.
+    Monte Carlo link validation: empirical BER vs. closed-form
+    Q(√(2·Eb/N0)) theory, and frame-level degradation under channel noise.
   </sub>
 </p>
-
 <p align="center">
   <a href="https://github.com/tyreefranklinjr/TeleComms--Software-Defined-Comms">
     <b>View RF simulation + statistical analysis →</b>
@@ -106,7 +107,6 @@ soft decisions → Viterbi decode → CRC validation
 ## Selected Engineering Work
 
 ### Real-Time Software-Defined Communications + RF Processing
-
 `C++20` `C` `Rust` `Python` `Linux` `RTL-SDR` `FFTW` `CMake/Ninja` `Nix`
 
 * Sustained **1.024 MS/s IQ processing** with **<4 ms p99 DSP latency**, bounded queues, explicit backpressure, and zero steady-state allocation in the critical path.
@@ -115,7 +115,6 @@ soft decisions → Viterbi decode → CRC validation
 * Built **4096-point FFT**, deterministic IQ record/replay, fault injection, and endurance validation with **99.99% block delivery over 60 minutes**.
 
 ### Resilient Autonomous Mission Computer
-
 `C++20` `C` `Rust` `FreeRTOS` `ESP32-C3` `CAN/TWAI` `EKF` `PID` `A*`
 
 * Architected a distributed **4-node** embedded system with real-time tasks up to **50 Hz**, CAN/TWAI, IMU/GNSS fusion, watchdogs, and bounded-memory execution.
@@ -124,7 +123,6 @@ soft decisions → Viterbi decode → CRC validation
 * Achieved **100% safe-state transition success across 500+ automated SIL/HIL fault scenarios**.
 
 ### Live RF / Fixed-Wireless Operations
-
 * Diagnose physical wireless links using **constellation diagrams, SNR, packet loss, MTR, and radio telemetry**.
 * Identify RF interference, intermittent **QAM downshift**, radio-side faults, backhaul failures, and routing issues across roughly **30 cases/day**.
 * Work directly with network and tower engineering on RF alignment, backhaul, and field infrastructure.
@@ -132,7 +130,6 @@ soft decisions → Viterbi decode → CRC validation
 ---
 
 ## Core Stack
-
 `C++20` · `Rust` · `C` · `Python` · `Linux` · `SDR` · `DSP` · `FreeRTOS` · `Sockets` · `TCP/UDP` · `CAN/TWAI` · `CMake` · `Nix` · `Docker` · `pytest` · `GoogleTest`
 
 ---
