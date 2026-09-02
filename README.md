@@ -113,11 +113,6 @@ Metrics: p99 latency, block delivery
 * Developed fault-tolerant communications with sequence tracking, ACK/retry logic, duplicate suppression, link scoring, priority queues, and automatic failover, maintaining autonomous operation through **30 s communication outages** with **<250 ms failover latency**.
 * Implemented EKF-based state estimation, PID control, A* motion planning, and deterministic SIL/HIL fault injection across sensor, CAN, network, and system failures, achieving **100% safe-state transition success** across **500+ automated scenarios**.
 
-### Live RF / Fixed-Wireless Operations
-* Diagnose physical wireless links using **constellation diagrams, SNR, packet loss, MTR, and radio telemetry**.
-* Identify RF interference, intermittent **QAM downshift**, radio-side faults, backhaul failures, and routing issues across roughly **30 cases/day**.
-* Work directly with network and tower engineering on RF alignment, backhaul, and field infrastructure.
-
 ---
 
 ## Core Stack
