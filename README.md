@@ -100,6 +100,7 @@ Metrics: p99 latency, block delivery
 
 ### Real-Time Software-Defined Communications and RF Processing Platform
 <sub>Jun 2026</sub>
+
 `C++20` `C` `Rust` `Python` `Linux` `RTL-SDR` `DSP` `FFTW` `CMake/Ninja` `Nix` `Docker`
 
 * Engineered a real-time SDR processing stack sustaining **1.024 MS/s IQ throughput** with **<4 ms p99 DSP latency**, implementing bounded SPSC queues, explicit backpressure, and zero steady-state heap allocation in the critical processing path.
@@ -107,6 +108,7 @@ Metrics: p99 latency, block delivery
 
 ### Resilient Autonomous Mission Computer and Degraded-Communications Platform
 <sub>Jul 2026</sub>
+
 `C++20` `C` `Rust` `FreeRTOS` `ESP32-C3` `CAN/TWAI` `I2C` `UART` `EKF` `PID` `A*` `Docker` `Linux`
 
 * Architected a distributed **4-node** embedded autonomy system with FreeRTOS scheduling up to **50 Hz**, CAN/TWAI communication, IMU/GNSS sensor fusion, watchdogs, mission-state management, and bounded-memory execution across real-time control paths.
@@ -129,3 +131,5 @@ Metrics: p99 latency, block delivery
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tyreefranklinjr/tyreefranklinjr/output/github-contribution-grid-snake.svg">
   <img alt="contribution snake" src="https://raw.githubusercontent.com/tyreefranklinjr/tyreefranklinjr/output/github-contribution-grid-snake.svg">
 </picture>
+
+<img src="https://komarev.com/ghpvc/?username=tyreefranklinjr&style=flat&base=0" width="1" height="1" alt="" />
